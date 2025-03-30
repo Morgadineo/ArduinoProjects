@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Arthur Morgado",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -252.6, "left": 12.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -10.2, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -243.6,
+      "left": 147.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -168.85,
+      "left": 172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -285.6,
+      "left": 97.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "uno:2", "bb1:21t.e", "green", [ "v0" ] ],
+    [ "r1:1", "bb1:15t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:21t.e", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:15t.a", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:10t.a", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:11t.a", "", [ "$bb" ] ],
+    [ "bb1:14t.e", "uno:GND.1", "green", [ "v9.6", "h-57.6" ] ],
+    [ "bb1:14t.e", "bb1:10t.e", "green", [ "v0" ] ],
+    [ "bb1:15t.b", "bb1:11t.b", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
